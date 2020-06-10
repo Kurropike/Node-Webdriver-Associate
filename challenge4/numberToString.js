@@ -50,10 +50,10 @@ function numToString2(number){
         stringnum = getNum(million) + "million";
     }
 
-    var billion = s_number.substring(s_number.length-12, (s_number.length-12)+3);
-    if(billion > 0){
-        stringnum = getNum(billion) + "billion";
-    }
+    // var billion = s_number.substring(s_number.length-12, (s_number.length-12)+3);
+    // if(billion > 0){
+    //     stringnum = getNum(billion) + "billion";
+    // }
 }
     
  
