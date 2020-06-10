@@ -1,17 +1,25 @@
 module.exports = {
-    fibonacci: fibonacci,
-    fibonacci1: fibonacci1,
-    fibonacci2: fibonacci2
+    fibonacci: fibonacci
+  
 }
-function fibonacci (number){
 
-    return total;
-}
-function fibonacci1 (number){
+function fibonacci(number) {
+    if (number < 2){
+      return number
+    }
+    return fibonacci(number - 1) + fibonacci(number - 2)
+  }
+// function fibonacci(number){
+  
+//     var total = 0; 
+//     if (number <= 1){
+//         total = 0;  
+//     } else {
+//         //calculate fib sequence 
+//         for(var i; i < number; i++){
+//             // add up whatever numbers 
 
-    return total;
-}
-function fibonacci2 (number){
-
-    return total;
-}
+//         }
+//     }
+//     return total;
+// }
