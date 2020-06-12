@@ -10,7 +10,7 @@ describe("challenge4 suite", function(){
          
     // }); 
     it('should test fibonacci', function(){
-        console.log(fib.fibonacci(15) + " = " + ston.numToString2(fib.fibonacci(15)));
+        console.log(fib.fibonacci(8) + " = " + ston.numToString2(fib.fibonacci(8)));
 
     });
 
