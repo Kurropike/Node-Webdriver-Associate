@@ -66,8 +66,6 @@ describe("challenge5 suite", function(){
         ment.click();
         return driver.wait(until.elementIsNotVisible(driver.findElement(By.id('serverSideDataTable_processing', 10000))));
         
-    
-
     })
 
     // it("should loop through popular section and print link and name", async function() {
