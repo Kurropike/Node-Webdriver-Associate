@@ -8,6 +8,7 @@ var until = webdriver.until;
 describe("challenge5 suite", function(){
     this.timeout(20000);
     var driver;
+    var models_array = []; 
     before(function () {
         driver = new webdriver.Builder()
        .withCapabilities(webdriver.Capabilities.chrome())
@@ -26,6 +27,7 @@ describe("challenge5 suite", function(){
         var element = await driver.findElement(By.xpath('//form[@id="search-form"]//input'));
         return element.sendKeys("PORSCHE" + Key.ENTER)
     });
+ 
     // it("Should change the drop down for “Show Entries” to 100 from 20", async function() {
     //     await driver.wait(until.titleContains('PORSCHE'), 10000);
     //     console.log(await driver.getTitle());
@@ -62,19 +64,51 @@ describe("challenge5 suite", function(){
     it("Should change to show 100 results", async function(){
         var ment = await driver.findElement(By.xpath('//select[@name="serverSideDataTable_length"]'));
         await ment.click();
-        ment.sendKeys("ENTER");
-        ment.click();
+        await ment.sendKeys("100");
+        await ment.sendKeys("ENTER");
+        await ment.click();
         return driver.wait(until.elementIsNotVisible(driver.findElement(By.id('serverSideDataTable_processing', 10000))));
-        
-    })
 
-    // it("should loop through popular section and print link and name", async function() {
-    //     var popular_array = await driver.findElements(webdriver.By.xpath("//div[@id='tabTrending']//a"));
-    //     console.log(popular_array.length);
-    //     for (var i=0; i<popular_array.length; i++){
-    //         console.log(await popular_array[i].getText() +  " - " + await popular_array[i].getAttribute("href"));
-    //     }
+    });
+    it('should get Text and add to Array', async function(){
+        // var models_array = []; 
+        var array_elements = await driver.findElements(webdriver.By.xpath('//span[@data-uname="lotsearchLotmodel"]'));
+        for (var i =0; i<array_elements.length; i++){
+            // console.log(await array_elements[i].getText());
+            models_array.push(await array_elements[i].getText())
+        }
+
+    });
+    it("Sort the array", function(){
+        sortedArray = models_array.sort();
+    });
+    it("Print everything in the sorted array", function(){
+        for (var i =0; i<sortedArray.length; i++){
+            console.log(sortedArray[i]);
+        }
+    });
+    
+
+
+    // it("Switch statement", function(){
+    //     switch(models_array) {
+    //                 case 1: 
+    //                     text  //do something for me
+    //                         break; 
+    //                 case 2: 
+    //                         //do second thing
+    //                         break; 
+    //                 default: 
+    //                         //whatever 
+    //                         break;
+                    
+    //                     //array[i].getText() => Promise pending..... 
+    //                     //console.log(await[i].getText())
+        
+    //             }
     // });
+
+
  
  
 });
