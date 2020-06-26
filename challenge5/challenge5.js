@@ -82,11 +82,11 @@ describe("challenge5 suite", function(){
     it("Sort the array", function(){
         sortedArray = models_array.sort();
     });
-    it("Print everything in the sorted array", function(){
-        for (var i =0; i<sortedArray.length; i++){
-            console.log(sortedArray[i]);
-        }
-    });
+    // it("Print everything in the sorted array", function(){
+    //     for (var i =0; i<sortedArray.length; i++){
+    //         console.log(sortedArray[i]);
+    //     }
+    // });
     
 
 
