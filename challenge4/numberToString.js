@@ -19,7 +19,7 @@ function numToString(number){
         x = numlength;
     }
     while (x < numlength){
-        if (numlength < 3)
+        if (numlength >= 3)
         {
             t = two_digits[num[x]];
             x = numlength;
