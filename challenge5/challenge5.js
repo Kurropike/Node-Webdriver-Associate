@@ -23,10 +23,10 @@ describe("challenge5 suite", function(){
     it("Should open the copart website", function() {
         return driver.get("http://www.copart.com");
     });
-    it("Should run a search for 'PORSCHE'", async function() {
-        var element = await driver.findElement(By.xpath('//form[@id="search-form"]//input'));
-        return element.sendKeys("PORSCHE" + Key.ENTER)
-    });
+    // it("Should run a search for 'PORSCHE'", async function() {
+    //     var element = await driver.findElement(By.xpath('//form[@id="search-form"]//input'));
+    //     return element.sendKeys("PORSCHE" + Key.ENTER)
+    // });
  
     // it("Should change the drop down for “Show Entries” to 100 from 20", async function() {
     //     await driver.wait(until.titleContains('PORSCHE'), 10000);
