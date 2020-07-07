@@ -48,4 +48,4 @@ describe("challenge5 suite", function(){
         models_array.push(await array_elements[i].getText())
     }
 
-});
+}); 
