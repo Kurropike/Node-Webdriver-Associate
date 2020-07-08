@@ -1,12 +1,15 @@
-require('chromedriver');
+// require('chromedriver');
 var webdriver = require('selenium-webdriver');
 var assert = require("chai").assert;
+var chrome = require('selenium-webdriver/chrome');
+var firefox = require('selenium-webdriver/firefox')
 var By = webdriver.By;
 var Key = webdriver.Key;
 var until = webdriver.until;
+const d = require('../common/driver');
 
 describe("challenge5 suite", function(){
-    this.timeout(20000);
+    this.timeout(30000);
     var driver;
     var models_array = []; 
     before(function () {
@@ -14,7 +17,7 @@ describe("challenge5 suite", function(){
     //    .withCapabilities(webdriver.Capabilities.chrome())
     //    .build();
     //    driver.manage().window().maximize();
-       return driver = await driverManager.getDriver();
+       driver = d.getdriver1();
     });
 
     after(function () {
@@ -26,6 +29,10 @@ describe("challenge5 suite", function(){
     it("Should run a search for 'PORSCHE'", async function() {
         var element = await driver.findElement(By.xpath('//form[@id="search-form"]//input'));
         return element.sendKeys("PORSCHE" + Key.ENTER)
+    });
+    it('Should click on the search button', async function () {
+        var searchButton = await driver.findElement(By.xpath('//button[@type="submit"])'));
+        return searchButton.click();
     });
  
     // it("Should change the drop down for “Show Entries” to 100 from 20", async function() {
