@@ -12,12 +12,12 @@ describe("challenge5 suite", function(){
     this.timeout(30000);
     var driver;
     var models_array = []; 
-    before(function () {
+    before(async function () {
     //     driver = new webdriver.Builder()
     //    .withCapabilities(webdriver.Capabilities.chrome())
     //    .build();
     //    driver.manage().window().maximize();
-       driver = d.getdriver1();
+       return driver = await d.getdriver1();
     });
 
     after(function () {
@@ -30,10 +30,10 @@ describe("challenge5 suite", function(){
         var element = await driver.findElement(By.xpath('//form[@id="search-form"]//input'));
         return element.sendKeys("PORSCHE" + Key.ENTER)
     });
-    it('Should click on the search button', async function () {
-        var searchButton = await driver.findElement(By.xpath('//button[@type="submit"])'));
-        return searchButton.click();
-    });
+    // it('Should click on the search button', async function () {
+    //     var searchButton = await driver.findElement(By.xpath('//button[@type="submit"])'));
+    //     return searchButton.click();
+    // });
  
     // it("Should change the drop down for “Show Entries” to 100 from 20", async function() {
     //     await driver.wait(until.titleContains('PORSCHE'), 10000);
