@@ -1,6 +1,6 @@
 module.exports = {
     numToString: numToString,
-    numToString2: numToString2
+    numToString2: numToString2 
 }
 
 
